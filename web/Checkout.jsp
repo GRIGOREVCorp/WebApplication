@@ -32,6 +32,7 @@
         </tr>
     </table>
     <input type="submit" value="Завершить оформление заказа" onclick="form.action='/ProjectV3_war_exploded/AddOrderServlet';">
+    <input type="submit" value="Перейти в личный кабинет" onclick="form.action='Welcom.jsp';">
 </form>
 </body>
 </html>

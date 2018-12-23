@@ -26,6 +26,6 @@ public class DeleteOrderServlet extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        request.getRequestDispatcher("/MyOrderServlet").forward(request,response);
+        request.getRequestDispatcher("/MyOrderServlet?notParameter=false").forward(request,response);
     }
 }

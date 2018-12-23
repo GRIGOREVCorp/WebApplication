@@ -3,6 +3,12 @@
 <html>
 <head>
     <title>Title</title>
+    <style>
+        .error {
+            size: 10px;
+            color: red;
+        }
+    </style>
 </head>
 <body>
 <table border="1" width="100%">
@@ -33,6 +39,11 @@
         </tr>
     </c:forEach>
 </table>
+<% String res = (String) request.getParameter("notParameter"); %>
+<% if(res.equals("true")) { %>
+<span class="error">Заказ не был добавлен! Возможно были введены пустые параметры.</span>
+<% } %>
 <a href="Checkout.jsp">Оформить заказ</a>
+<a href="Welcom.jsp">Перейти в личный кабинет</a>
 </body>
 </html>

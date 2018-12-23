@@ -2,12 +2,7 @@
 <html>
     <head>
         <title>Title</title>
-        <style>
-            .error {
-                size: 10px;
-                color: red;
-            }
-        </style>
+        с
     </head>
     <body>
         <form name="Authorization">
@@ -35,6 +30,6 @@
     </body>
     <% String res = (String) request.getParameter("notFound"); %>
     <% if(res.equals("true")) { %>
-    <span class="error">Wrong login or password!</span>
+    <span class="error">Неверный логин или пароль!</span>
     <% } %>
 </html>

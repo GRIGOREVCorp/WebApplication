@@ -21,10 +21,9 @@ public class RegistrationServlet extends HttpServlet {
                    middleName;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        response.setContentType("text/html;charset=UTF-8");
         Factory factory = Factory.getInstance();
         CustomerDAO customerDAO = factory.getCustomerDAO();
-
         CustomerEO addCustomer = new CustomerEO();
         addCustomer(addCustomer,request);
         int id = 0;

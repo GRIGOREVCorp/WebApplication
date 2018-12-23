@@ -24,6 +24,7 @@ public class MyOrderServlet extends HttpServlet {
     List<Object> orders = null;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
         try {
             factory.orderDAO=null;
             orderDAO = factory.getOrderDAOforHistory();
@@ -32,8 +33,7 @@ public class MyOrderServlet extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        response.setContentType("text/html;charset=UTF-8");
         request.setAttribute("orders", orders);
-        request.getRequestDispatcher("ShowOrder.jsp").forward(request,response);
+        request.getRequestDispatcher("ShowOrder.jsp?notParameter="+request.getParameter("notParameter")).forward(request,response);
     }
 }

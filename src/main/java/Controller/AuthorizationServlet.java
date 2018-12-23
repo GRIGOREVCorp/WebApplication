@@ -1,5 +1,6 @@
 package Controller;
 
+import Exceptions.NullParameterException;
 import dao.CustomerDAO;
 import utils.Factory;
 
@@ -17,17 +18,24 @@ public class AuthorizationServlet extends HttpServlet {
     List<Object> customers =null;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
         Factory factory = Factory.getInstance();
         CustomerDAO customerDAO = factory.getCustomerDAO();
         try {
-            customers = customerDAO.viewQuery((String) request.getParameter("login"), (String) request.getParameter("password"));
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        response.setContentType("text/html;charset=UTF-8");
-        if((customers!=null)&&(customers.size()>0))
-            request.getRequestDispatcher("Welcom.jsp").include(request, response);
-        else
+            if((request.getParameter("login")=="")||(request.getParameter("password")=="")) throw new NullParameterException();
+            try {
+                customers = customerDAO.viewQuery((String) request.getParameter("login"), (String) request.getParameter("password"));
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            response.setContentType("text/html;charset=UTF-8");
+            if ((customers != null) && (customers.size() > 0))
+                request.getRequestDispatcher("Welcom.jsp").include(request, response);
+            else
+                request.getRequestDispatcher("Authorization.jsp?notFound=true").include(request, response);
+        }catch (NullParameterException ex) {
+            ex.printStackTrace();
             request.getRequestDispatcher("Authorization.jsp?notFound=true").include(request, response);
+        }
     }
 }

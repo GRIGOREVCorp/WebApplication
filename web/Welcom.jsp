@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>Личный кабинет</h1>
-<p><a href="/ProjectV3_war_exploded/MyOrderServlet">Показать мои заказы</a></p>
+<p><a href="/ProjectV3_war_exploded/MyOrderServlet?notParameter=false">Показать мои заказы</a></p>
 <p><a href="Checkout.jsp">Оформить заказ</a></p>
 </body>
 </html>
