@@ -1,6 +1,7 @@
 package entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "customer", schema = "neoflexdb")
@@ -11,6 +12,16 @@ public class CustomerEO {
     private String middleName;
     private String login;
     private String password;
+    private List<OrdercustomerEO> orders;
+
+    @OneToMany(mappedBy = "customerEO", cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
+    public List<OrdercustomerEO> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<OrdercustomerEO> orders) {
+        this.orders = orders;
+    }
 
     @Id
     @Column(name = "id", nullable = false)

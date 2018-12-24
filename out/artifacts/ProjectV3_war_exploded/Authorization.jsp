@@ -2,7 +2,12 @@
 <html>
     <head>
         <title>Title</title>
-        с
+        <style>
+            .error {
+                size: 10px;
+                color: red;
+            }
+        </style>
     </head>
     <body>
         <form name="Authorization">

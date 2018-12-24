@@ -5,7 +5,8 @@
 </head>
 <body>
 <h1>Личный кабинет</h1>
-<p><a href="/ProjectV3_war_exploded/MyOrderServlet?notParameter=false">Показать мои заказы</a></p>
-<p><a href="Checkout.jsp">Оформить заказ</a></p>
+<% String cusId = (String) request.getParameter("cusId"); %>
+<p><a href="/ProjectV3_war_exploded/MyOrderServlet?notParameter=false&cusId=<%=cusId%>">Показать мои заказы</a></p>
+<p><a href="Checkout.jsp?cusId=<%=cusId%>">Оформить заказ</a></p>
 </body>
 </html>

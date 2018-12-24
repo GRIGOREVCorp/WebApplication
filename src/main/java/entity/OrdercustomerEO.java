@@ -11,6 +11,17 @@ public class OrdercustomerEO {
     private Date date;
     private List<OrderhistoryEO> history;
     private OrderstatusEO orderstatusEO;
+    private CustomerEO customerEO;
+
+    @ManyToOne
+    @JoinColumn(name = "customer_id")
+    public CustomerEO getCustomerEO() {
+        return customerEO;
+    }
+
+    public void setCustomerEO(CustomerEO customerEO) {
+        this.customerEO = customerEO;
+    }
 
     @ManyToOne
     @JoinColumn(name = "order_status_id")
