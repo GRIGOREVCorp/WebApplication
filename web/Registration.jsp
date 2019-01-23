@@ -1,14 +1,22 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
-</head>
+        <title>Title</title>
+        <link rel="stylesheet" href="css/style.css">
+		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    </head>
 <body>
-    <form name="registration">
+	<header>
+			<div class="logo">
+				<a href="index.html"><img class="graficlogo" src="img/logo.png" alt="Logo"></a>
+			</div>
+			<nav>
+				<div class="Reg">
+	<form name="registration">
         <table>
             <tr>
                 <td>
-                    USERNAME:
+                    <p class="textTable">ЛОГИН:</p>
                 </td>
                 <td>
                     <input type="text" name="login"/>
@@ -16,7 +24,7 @@
             </tr>
             <tr>
                 <td>
-                    PASSWORD:
+                    <p class="textTable">ПАРОЛЬ:</p>
                 </td>
                 <td>
                     <input type="text" name="password"/>
@@ -24,7 +32,7 @@
             </tr>
             <tr>
                 <td>
-                    FIRST NAME:
+                    <p class="textTable">ИМЯ:</p>
                 </td>
                 <td>
                     <input type="text" name="firstName"/>
@@ -32,7 +40,7 @@
             </tr>
             <tr>
                 <td>
-                    LAST NAME:
+                    <p class="textTable">ФАМИЛИЯ:</p>
                 </td>
                 <td>
                     <input type="text" name="lastName"/>
@@ -40,14 +48,19 @@
             </tr>
             <tr>
                 <td>
-                    MIDDLE NAME:
+                    <p class="textTable">ОТЧЕСТВО:</p>
                 </td>
                 <td>
                     <input type="text" name="middleName"/>
                 </td>
             </tr>
         </table>
-        <input type="submit" value="Подтвердить" onclick="form.action='/ProjectV3_war_exploded/Registration';">
-    </form>
+		<div class="button">
+			<input type="submit" value="Подтвердить" onclick="form.action='/ProjectV3_war_exploded/Registration';">
+		</div>
+	</form>
+				</div>
+			</nav>
+		</header>    
 </body>
 </html>
